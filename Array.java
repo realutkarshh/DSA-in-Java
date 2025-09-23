@@ -31,5 +31,10 @@ class Array{
            int[] days = new int[7];
            for(int i = 0; i<days.length;i++){days[i] = i + 1;}
            System.out.println(Arrays.toString(days));
+
+           //Another method to read arrays using for loop
+           for(int day : days){
+            System.out.println(day);
+           }
     }
 }
