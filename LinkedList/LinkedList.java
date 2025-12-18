@@ -4,6 +4,13 @@ public class LinkedList {
     
     //Create a Node class
     Node head;
+
+    private int size; //To store the size of linked list
+
+    LinkedList(){
+        this.size = 0;
+    }
+
     class Node {
         int data; //data is the value that your node will store
         Node next; //next is the pointer that will point to the next node
@@ -12,6 +19,7 @@ public class LinkedList {
         Node(int data){
             this.data = data; 
             this.next = null;
+            size++;
         }
     }
 
@@ -61,6 +69,7 @@ public class LinkedList {
             System.out.println("The list is empty");
             return;
         }
+        size--;
         head = head.next;
     }
 
@@ -70,6 +79,7 @@ public class LinkedList {
             System.out.println("The list is empty");
             return;
         }
+        size--;
         if(head.next == null){
             head = null;
         }
@@ -81,6 +91,11 @@ public class LinkedList {
         }
 
         secondLast.next = null;
+    }
+
+    //Function to get the size of the Linked list
+    public int getSize(){
+        return size;
     }
 
     public static void main(String[] args) {
@@ -95,5 +110,8 @@ public class LinkedList {
 
         list.deleteLast();
         list.printList();
+
+        int size = list.getSize();
+        System.out.println(size);
     }
 }
